@@ -1,0 +1,266 @@
+import java.util.Scanner;
+
+public class Course {
+
+public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+  
+        // Variables \\
+        String borderLine = "---------";
+        StringBuilder oneLine = new StringBuilder("|       |\n|       |\n|       |");
+        int oCounter = 0;
+        int xCounter = 0;
+        System.out.println(borderLine);
+        System.out.println(oneLine);
+        System.out.println(borderLine);
+        
+        boolean repeatLoop;
+        
+        int x;
+        int y;
+        
+        for(;;) {
+            
+            repeatLoop = false;
+
+            System.out.print("Enter the coordinates: ");
+            
+            /////* check the scanner for [int] value */////
+            for (;!scanner.hasNextInt();) {
+                scanner.next();
+                scanner.next();
+                System.out.println("You should enter numbers!");
+                repeatLoop = true;
+                break;
+            }
+             // repeat loop if scanner is not [int]
+            if (repeatLoop) {
+                continue;
+            }
+            
+         ///// if its out of range \\\\\
+         
+            for (;;) {
+                x = scanner.nextInt();
+                y = scanner.nextInt();
+                // if its not on the grid
+                if ((x > 3 || x < 1) || (y > 3 || y < 1)) {
+                    System.out.println("Coordinates should be from 1 to 3!");
+                    System.out.print("Enter the coordinates: ");
+                    
+                } else {
+                    
+                    break;
+                }
+            }
+
+            ///////////// Adjust the moves into indexes \\\\\\\\\\\\\
+            
+                    // 2
+            if (x == 1 && y == 1) { 
+                if (oneLine.charAt(2) == 'X' || oneLine.charAt(2) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 1;
+                y += 2;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            }
+                    // 4
+            else if (x == 1 && y == 2) { 
+                if (oneLine.charAt(4) == 'X' || oneLine.charAt(4) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 3;
+                y += 3;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            }
+                    // 6
+            else if (x == 1 && y == 3) { 
+                if (oneLine.charAt(6) == 'X' || oneLine.charAt(6) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 5;
+                y += 4;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            } 
+                    // 12
+            else if (x == 2 && y == 1) { 
+                if (oneLine.charAt(12) == 'X' || oneLine.charAt(12) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 10;
+                y += 12;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            } 
+                    // 14
+            else if (x == 2 && y == 2) { 
+                if (oneLine.charAt(14) == 'X' || oneLine.charAt(14) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 12;
+                y += 13;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            } 
+                    // 16
+            else if (x == 2 && y == 3) { 
+                if (oneLine.charAt(16) == 'X' || oneLine.charAt(16) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 14;
+                y += 14;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            } 
+                    // 22
+            else if (x == 3 && y == 1) { 
+                if (oneLine.charAt(22) == 'X' || oneLine.charAt(22) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 19;
+                y += 22;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            } 
+                    // 24
+            else if (x == 3 && y == 2) { 
+                if (oneLine.charAt(24) == 'X' || oneLine.charAt(24) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 21;
+                y += 23;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            } 
+                    // 26
+            else if (x == 3 && y == 3) { 
+                if (oneLine.charAt(26) == 'X' || oneLine.charAt(26) == 'O') {
+                    System.out.println("This cell is occupied! Choose another one!");
+                    continue;
+                }
+                
+                x += 23;
+                y += 24;
+                
+                if (xCounter > oCounter) {
+                    oneLine.replace(x, y, "O");
+                    oCounter++;
+                } else {
+                    oneLine.replace(x, y, "X");
+                    xCounter++;
+                }
+            }
+            ///////////// ---------ADJUSTING END -------- //////////////
+            
+            // SHOWING THE BOARD
+ 
+            System.out.println(borderLine);
+            System.out.println(oneLine);
+            System.out.println(borderLine);
+ 
+            
+            //////// ----- WHO WINS ? DRAW ? ------- //////////
+            
+            if (
+                    // X WINS
+                (oneLine.charAt(2) + oneLine.charAt(4) + oneLine.charAt(6) == 'X' + 'X' + 'X') || 
+                (oneLine.charAt(12) + oneLine.charAt(14) + oneLine.charAt(16) == 'X' + 'X' + 'X') ||
+                (oneLine.charAt(22) + oneLine.charAt(24) + oneLine.charAt(26) == 'X' + 'X' + 'X') ||
+                (oneLine.charAt(6) + oneLine.charAt(16) + oneLine.charAt(26) == 'X' + 'X' + 'X') ||    
+                (oneLine.charAt(4) + oneLine.charAt(14) + oneLine.charAt(24) == 'X' + 'X' + 'X') ||    
+                (oneLine.charAt(2) + oneLine.charAt(12) + oneLine.charAt(22) == 'X' + 'X' + 'X') || 
+                (oneLine.charAt(6) + oneLine.charAt(14) + oneLine.charAt(22) == 'X' + 'X' + 'X') ||
+                (oneLine.charAt(2) + oneLine.charAt(14) + oneLine.charAt(26) == 'X' + 'X' + 'X')) {
+                System.out.println("X wins");
+                break;
+                
+            } else if (
+                // O WINS
+                (oneLine.charAt(2) + oneLine.charAt(4) + oneLine.charAt(6) == 'O' + 'O' + 'O') || 
+                (oneLine.charAt(12) + oneLine.charAt(14) + oneLine.charAt(16) == 'O' + 'O' + 'O') ||
+                (oneLine.charAt(22) + oneLine.charAt(24) + oneLine.charAt(26) == 'O' + 'O' + 'O') ||
+                (oneLine.charAt(6) + oneLine.charAt(16) + oneLine.charAt(26) == 'O' + 'O' + 'O') ||    
+                (oneLine.charAt(4) + oneLine.charAt(14) + oneLine.charAt(24) == 'O' + 'O' + 'O') ||    
+                (oneLine.charAt(2) + oneLine.charAt(12) + oneLine.charAt(22) == 'O' + 'O' + 'O') || 
+                (oneLine.charAt(6) + oneLine.charAt(14) + oneLine.charAt(22) == 'O' + 'O' + 'O') ||
+                (oneLine.charAt(2) + oneLine.charAt(14) + oneLine.charAt(26) == 'O' + 'O' + 'O')) {
+                System.out.println("O wins");
+                break;
+            
+            } else if ((oneLine.charAt(2) != ' ' && (oneLine.charAt(4) != ' ') && oneLine.charAt(6) != ' ') &&
+                    (oneLine.charAt(12) != ' ' && (oneLine.charAt(14) != ' ') && oneLine.charAt(16) != ' ') &&
+                    (oneLine.charAt(22) != ' ' && (oneLine.charAt(24) != ' ') && oneLine.charAt(26) != ' ')){
+                System.out.println("Draw");
+                break;
+            }
+            
+            
+        }
